@@ -1,0 +1,9 @@
+{
+  "name": "twitter-client-redux",
+  "version": "1.0.0",
+  "description": "An Redux async example with Twitter",
+  "main": "index.js",
+  "repository": "https://github.com/Tiendq/twitter-client-redux",
+  "author": "Tien Do",
+  "license": "MIT"
+}
