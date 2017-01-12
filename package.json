@@ -3,7 +3,53 @@
   "version": "1.0.0",
   "description": "An Redux async example with Twitter",
   "main": "index.js",
-  "repository": "https://github.com/Tiendq/twitter-client-redux",
-  "author": "Tien Do",
-  "license": "MIT"
+  "keywords": [
+    "react",
+    "redux",
+    "twitter"
+  ],
+  "scripts": {
+    "build": "webpack -p",
+    "lint": "eslint **/*.js",
+    "start": "webpack-dev-server --inline --hot --host 0.0.0.0",
+    "test": "jest --watch",
+    "watch": "webpack --progress --colors --watch"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.scss$": "identity-obj-proxy"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/Tiendq/twitter-client-redux.git",
+    "type": "git"
+  },
+  "author": "Tien Do <tiendq@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.13.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "identity-obj-proxy": "^3.0.0",
+    "node-sass": "^4.2.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "^1.3.1",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-devtools": "^3.3.1",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
 }
