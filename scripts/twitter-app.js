@@ -1,18 +1,23 @@
 import React from 'react';
 import SearchFormContainer from './search-form-container';
+import StatusBanner from './status-banner';
+import SearchResultContainer from './search-result-container';
 import '../scss/twitter-app.scss';
 
 const TwitterApp = () => (
   <div>
     <header className="row">
-      <h1>twitter-client-redux</h1>
-      <h5>You can search Twitter using the search box below</h5>
+      <h1 className="col-xs-12">twitter-client-redux</h1>
+      <p className="col-xs-12">You can search Twitter using the search box below</p>
     </header>
-    <SearchFormContainer />
     <div className="row">
-      <div className="col-md-4">
-        
-      </div>
+      <SearchFormContainer />
+    </div>
+    <div className="row">
+      <StatusBanner />
+    </div>
+    <div className="row">
+      <SearchResultContainer />
     </div>
   </div>
 );

@@ -1,7 +1,7 @@
 {
   "name": "twitter-client-redux",
   "version": "1.0.0",
-  "description": "An Redux async example with Twitter",
+  "description": "An Redux async actions example with Twitter",
   "main": "index.js",
   "keywords": [
     "react",
@@ -49,6 +49,7 @@
     "redux-devtools": "^3.3.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
+    "twit": "^2.2.5",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   }
