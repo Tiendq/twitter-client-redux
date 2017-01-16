@@ -1,3 +1,5 @@
+let webpack = require('webpack');
+
 module.exports = {
   module: {
     preLoaders: [{
@@ -15,9 +17,14 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // 'only' prevents reload on syntax errors
+    'webpack-hot-middleware/client',
+    'babel-polyfill',
     './index.js'
   ],
   output: {

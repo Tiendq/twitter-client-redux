@@ -1,7 +1,7 @@
 {
   "name": "twitter-client-redux",
   "version": "1.0.0",
-  "description": "An Redux async actions example with Twitter",
+  "description": "A Redux async action example with Twitter",
   "main": "index.js",
   "keywords": [
     "react",
@@ -11,9 +11,8 @@
   "scripts": {
     "build": "webpack -p",
     "lint": "eslint **/*.js",
-    "start": "webpack-dev-server --inline --hot --host 0.0.0.0",
-    "test": "jest --watch",
-    "watch": "webpack --progress --colors --watch"
+    "start": "nodemon server.js",
+    "test": "jest --watch"
   },
   "jest": {
     "moduleNameMapper": {
@@ -29,8 +28,10 @@
   "dependencies": {
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-polyfill": "^6.20.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.1",
@@ -39,7 +40,10 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
+    "express": "^4.14.0",
     "identity-obj-proxy": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jest": "^18.1.0",
     "node-sass": "^4.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -49,8 +53,9 @@
     "redux-devtools": "^3.3.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
-    "twit": "^2.2.5",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-hot-middleware": "^2.15.0"
   }
 }
