@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { sendSearchRequest } from './actions';
 import SearchForm from './search-form';
 
 const mapStateToProps = (state) => ({
@@ -7,6 +8,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   startSearch(keyword) {
+    if (keyword.length > 0)
+      dispatch(sendSearchRequest(keyword));
   }
 });
 
