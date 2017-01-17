@@ -6,7 +6,7 @@ const StatusBannerInner = ({ status, text }) => {
   if ('' === text)
     return null;
 
-  let className = 'status-banner alert';
+  let className = 'status-banner alert alert-' + status;
   return <p className={className}>{text}</p>;
 };
 

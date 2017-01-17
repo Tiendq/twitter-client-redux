@@ -1,9 +1,7 @@
-//import searchTwitter from './twitter-client';
 import fetch from 'isomorphic-fetch';
 
 // In Redux action creators simply return an action.
 // http://redux.js.org/docs/basics/Actions.html
-
 export const START_SEARCH = 'START_SEARCH';
 export const SEARCH_FAILURE = 'SEARCH_FAILURE';
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
@@ -18,9 +16,9 @@ const searchFailure = (error) => ({
   error
 });
 
-const searchSuccess = (response) => ({
+const searchSuccess = (result) => ({
   type: SEARCH_SUCCESS,
-  response
+  result
 });
 
 // Meet our first thunk action creator!
@@ -30,6 +28,11 @@ const sendSearchRequest = (keyword) => {
   // thus making it able to dispatch actions itself.
   let action = (dispatch) => {
     dispatch(startSearch(keyword));
+
+    return fetch('/search?q=' + encodeURIComponent(keyword))
+      .then(response => response.json())
+      .then(json => dispatch(searchSuccess(json)))
+      .catch(error => dispatch(searchFailure(error)));
   };
 
   return action;

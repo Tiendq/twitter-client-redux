@@ -1,1 +1,21 @@
-.search-result-item {}
+.search-result-item {
+  position: relative;
+
+  .profile-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .item-content {
+    margin-left: 55px;
+
+    .username {
+      font-weight: 700;
+    }
+
+    .created-date {
+      font-size: 0.85rem;
+    }
+  }
+}

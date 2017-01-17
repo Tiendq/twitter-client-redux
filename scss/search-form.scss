@@ -1,13 +1,9 @@
 .search-form {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #e8f4fb;
   border: 1px solid #e1e8ed;
-  border-radius: 5px 5px 0 0;
-
-  &.empty {
-    border-radius: 5px;
-  }
+  border-radius: 5px;
+  background-color: #e8f4fb;
 }
 
 .form-inline .form-group {

@@ -16,7 +16,7 @@ function search(keyword) {
 
 function reduceData(statuses) {
   return statuses.map(status => ({
-    id: status.id,
+    id: status.id_str,
     text: status.text,
     createdDate: status.created_at,
     userName: status.user.name,

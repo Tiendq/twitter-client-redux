@@ -2,16 +2,15 @@ import { connect } from 'react-redux';
 import { sendSearchRequest } from './actions';
 import SearchForm from './search-form';
 
-const mapStateToProps = (state) => ({
-  isNoResult: 0 === state.tweets.length
-});
-
 const mapDispatchToProps = (dispatch) => ({
   startSearch(keyword) {
-    if (keyword.length > 0)
-      dispatch(sendSearchRequest(keyword));
+    let w = keyword.trim();
+
+    if (w.length > 0)
+      dispatch(sendSearchRequest(w));
   }
 });
 
-const SearchFormContainer = connect(mapStateToProps, mapDispatchToProps)(SearchForm);
+const SearchFormContainer = connect(null, mapDispatchToProps)(SearchForm);
+
 export default SearchFormContainer;
