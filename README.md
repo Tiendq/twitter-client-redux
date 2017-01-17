@@ -3,6 +3,8 @@ A [Redux async action](http://redux.js.org/docs/advanced/AsyncActions.html) exam
 
 [Twitter REST APIs](https://dev.twitter.com/rest/public)
 
+![Demo](./demo.png)
+
 ## How to start
 
 `yarn install`
