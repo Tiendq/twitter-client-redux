@@ -6,20 +6,9 @@ export const START_SEARCH = 'START_SEARCH';
 export const SEARCH_FAILURE = 'SEARCH_FAILURE';
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
 
-const startSearch = (keyword) => ({
-  type: START_SEARCH,
-  keyword
-});
-
-const searchFailure = (error) => ({
-  type: SEARCH_FAILURE,
-  error
-});
-
-const searchSuccess = (result) => ({
-  type: SEARCH_SUCCESS,
-  result
-});
+export const startSearch = makeActionCreator(START_SEARCH, 'keyword');
+export const searchFailure = makeActionCreator(SEARCH_FAILURE, 'error');
+export const searchSuccess = makeActionCreator(SEARCH_SUCCESS, 'result');
 
 // Meet our first thunk action creator!
 const sendSearchRequest = (keyword) => {
@@ -38,9 +27,19 @@ const sendSearchRequest = (keyword) => {
   return action;
 };
 
+// Generic sync action creator.
+// http://redux.js.org/docs/recipes/ReducingBoilerplate.html
+function makeActionCreator(type, ...propNames) {
+  return (...values) => {
+    let action = { type };
+
+    for (let index in propNames)
+      action[propNames[index]] = values[index];
+
+    return action;
+  };
+}
+
 export {
-  sendSearchRequest,
-  startSearch,
-  searchFailure,
-  searchSuccess
+  sendSearchRequest
 };

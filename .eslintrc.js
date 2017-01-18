@@ -22,7 +22,7 @@ module.exports = {
     "jsx-a11y" // eslint-plugin-jsx-a11y
   ],
   "rules": {
-    "no-console": 1,
+    "no-console": 0,
     "no-unused-vars": 1
   }
 };

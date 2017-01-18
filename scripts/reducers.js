@@ -19,7 +19,7 @@ const lastStatus = (state = { status: '', text: '' }, action) => {
       return { status: 'danger', text: action.error.toString() };
 
     case SEARCH_SUCCESS:
-      return Object.assign({}, state, { text: '' });
+      return { ...state, text: '' };
 
     default:
       return state;
