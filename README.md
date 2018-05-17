@@ -1,6 +1,8 @@
 # twitter-client-redux
 A [Redux async action](http://redux.js.org/docs/advanced/AsyncActions.html) example: searching Twitter.
 
+[![Build Status](https://travis-ci.com/Tiendq/twitter-client-redux.svg?branch=master)](https://travis-ci.com/Tiendq/twitter-client-redux)
+
 [Twitter REST APIs](https://dev.twitter.com/rest/public)
 
 ![Demo](./demo.png)
