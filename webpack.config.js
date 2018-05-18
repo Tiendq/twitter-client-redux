@@ -2,25 +2,24 @@ let webpack = require('webpack');
 
 module.exports = {
   module: {
-    preLoaders: [{
+    rules: [{
+      enforce: 'pre',
       test: /\.js$/,
-      loader: 'eslint',
+      use: 'eslint-loader',
       exclude: /node_modules/
-    }],
-    loaders: [{
+    }, {
       test: /\.js$/,
-      loader: 'babel',
+      use: 'babel-loader',
       exclude: /node_modules/
     }, {
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass'],
+      use: ['style-loader', 'css-loader', 'sass-loader'],
       exclude: /node_modules/
     }]
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ],
   entry: [
     'webpack-hot-middleware/client',
@@ -31,11 +30,6 @@ module.exports = {
     filename: 'index.js',
     path: __dirname + '/build',
     publicPath: '/build' // Must exist for HMR
-  },
-  sassLoader: {
-    sourceMap: true,
-    sourceComments: true,
-    outputStyle: 'expanded'
   },
   devtool: 'source-map'
 };

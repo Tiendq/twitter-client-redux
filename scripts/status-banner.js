@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import '../scss/status-banner.scss';
 
@@ -11,8 +12,8 @@ const StatusBannerInner = ({ status, text }) => {
 };
 
 StatusBannerInner.propTypes = {
-  status: React.PropTypes.string.isRequired,
-  text: React.PropTypes.string.isRequired
+  status: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 const mapStateToProps = (state) => ({

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SearchResultItem from './search-result-item';
 import '../scss/search-result.scss';
 
@@ -28,13 +29,13 @@ const renderTweetList = tweets => {
 };
 
 SearchResult.propTypes = {
-  keyword: React.PropTypes.string.isRequired,
-  tweets: React.PropTypes.arrayOf(React.PropTypes.shape({
-    id: React.PropTypes.string.isRequired,
-    text: React.PropTypes.string.isRequired,
-    createdDate: React.PropTypes.string.isRequired,
-    userName: React.PropTypes.string.isRequired,
-    userImageUrl: React.PropTypes.string.isRequired
+  keyword: PropTypes.string.isRequired,
+  tweets: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    createdDate: PropTypes.string.isRequired,
+    userName: PropTypes.string.isRequired,
+    userImageUrl: PropTypes.string.isRequired
   }).isRequired).isRequired
 };
 

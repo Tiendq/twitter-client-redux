@@ -7,9 +7,13 @@ function search(keyword) {
   if (accessToken) {
     return twitter.searchTwitter(accessToken, keyword).then(result => reduceData(result.statuses));
   } else {
-    return twitter.getBearerToken(config.CONSUMER_KEY, config.CONSUMER_SECRET).then(bearer => {
-      accessToken = bearer;
-      return twitter.searchTwitter(accessToken, keyword).then(result => reduceData(result.statuses));
+    return twitter.getBearerToken(config.CONSUMER_KEY, config.CONSUMER_SECRET).then(response => {
+      if ('bearer' === response.token_type) {
+        accessToken = response.access_token;
+        return twitter.searchTwitter(accessToken, keyword).then(result => reduceData(result.statuses));
+      } else {
+        throw new Error('No access token');
+      }
     });
   }
 }

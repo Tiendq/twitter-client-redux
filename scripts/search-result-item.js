@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../scss/search-result-item.scss';
 
 const SearchResultItem = ({ text, createdDate, userName, userImageUrl }) => {
@@ -14,10 +15,10 @@ const SearchResultItem = ({ text, createdDate, userName, userImageUrl }) => {
 };
 
 SearchResultItem.propTypes = {
-  text: React.PropTypes.string.isRequired,
-  createdDate: React.PropTypes.string.isRequired,
-  userName: React.PropTypes.string.isRequired,
-  userImageUrl: React.PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  createdDate: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired,
+  userImageUrl: PropTypes.string.isRequired
 };
 
 export default SearchResultItem;

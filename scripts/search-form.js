@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../scss/search-form.scss';
 
 let keywordElement = null;
@@ -18,7 +19,7 @@ const SearchForm = ({ startSearch }) => {
 };
 
 SearchForm.propTypes = {
-  startSearch: React.PropTypes.func.isRequired
+  startSearch: PropTypes.func.isRequired
 };
 
 export default SearchForm;

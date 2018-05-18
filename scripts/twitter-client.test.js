@@ -2,11 +2,11 @@ import { CONSUMER_KEY, CONSUMER_SECRET } from './config';
 import { getBearerToken } from './twitter-client';
 
 describe('Authenticate with getBearerToken', () => {
-  it('should return a valid bearer token', () => {
+  test('should return a valid bearer token', () => {
+    expect.assertions(2);
     return getBearerToken(CONSUMER_KEY, CONSUMER_SECRET).then(response => {
-      // return 'bearer' === response.token_type ? response.access_token : '';
-      //expect(response.token_type).toBe('bearer');
-      expect(response).toBeUndefined();
+      expect(response.token_type).toBe('bearer');
+      expect(response.access_token).toBeDefined();
     });
   });
 });

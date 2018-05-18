@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import reducers from './scripts/reducers';
 import TwitterApp from './scripts/twitter-app';
 

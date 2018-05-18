@@ -20,7 +20,7 @@ function getBearerToken(consumerKey, consumerSecret) {
       throw new Error('Bad response from server.');
 
     return response.json();
-  }).then(json => 'bearer' === json.token_type ? json.access_token : '');
+  }).then(json => json);
 }
 
 function searchTwitter(token, keyword) {
