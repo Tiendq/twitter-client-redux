@@ -4,6 +4,7 @@ let webpack = require('webpack');
 let webpackDevMiddleware = require('webpack-dev-middleware');
 let webpackHotMiddleware = require('webpack-hot-middleware');
 let webpackConfig = require('./webpack.config');
+let config = require('dotenv').config();
 let searchTwitter = require('./scripts/search-twitter');
 
 let compiler = webpack(webpackConfig);
