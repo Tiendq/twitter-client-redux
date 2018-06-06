@@ -4,8 +4,8 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import reducers from './scripts/reducers';
-import TwitterApp from './scripts/twitter-app';
+import reducers from './src/reducers';
+import TwitterApp from './src/twitter-app';
 
 const loggerMiddleware = createLogger();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

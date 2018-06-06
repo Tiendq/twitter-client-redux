@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../scss/search-form.scss';
+import './scss/search-form.scss';
 
 let keywordElement = null;
 

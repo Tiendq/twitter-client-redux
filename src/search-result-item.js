@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../scss/search-result-item.scss';
+import './scss/search-result-item.scss';
 
 const SearchResultItem = ({ text, createdDate, userName, userImageUrl }) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SearchResultItem from './search-result-item';
-import '../scss/search-result.scss';
+import './scss/search-result.scss';
 
 const SearchResult = ({ keyword, tweets }) => {
   if ('' === keyword)

@@ -2,7 +2,7 @@ import React from 'react';
 import SearchFormContainer from './search-form-container';
 import StatusBanner from './status-banner';
 import SearchResultContainer from './search-result-container';
-import '../scss/twitter-app.scss';
+import './scss/twitter-app.scss';
 
 const TwitterApp = () => (
   <div>

@@ -1,4 +1,10 @@
-build
+# OS or Editor folders
+.DS_Store
+
+# Folders to ignore
 coverage
+dist
 node_modules
+
+# Files to ignore
 .env

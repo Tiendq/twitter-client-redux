@@ -1,3 +1,4 @@
+let path = require('path');
 let webpack = require('webpack');
 
 module.exports = {
@@ -28,8 +29,8 @@ module.exports = {
   ],
   output: {
     filename: 'index.js',
-    path: __dirname + '/build',
-    publicPath: '/build' // Must exist for HMR
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist'
   },
   devtool: 'source-map'
 };
