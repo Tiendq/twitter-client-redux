@@ -4,7 +4,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import reducers from './src/reducers';
+import reducers from './src/reducers'; // import * as reducers from './source/reducers';
 import TwitterApp from './src/twitter-app';
 
 const loggerMiddleware = createLogger();

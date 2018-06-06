@@ -18,10 +18,6 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-  plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ],
   entry: [
     'webpack-hot-middleware/client',
     'babel-polyfill',
@@ -32,5 +28,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist'
   },
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
   devtool: 'source-map'
-};
+}
