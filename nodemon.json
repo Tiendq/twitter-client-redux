@@ -1,0 +1,9 @@
+{
+  "env": {
+    "DEBUG": "express*"
+  },
+  "ignore": [
+    "index.js",
+    "webpack.config.js"
+  ]
+}
