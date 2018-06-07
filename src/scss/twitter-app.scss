@@ -5,14 +5,15 @@ body {
 header {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  padding: 1rem 0;
   background: #007bff;
   text-align: center;
-}
 
-h1 {
-  color: #1b95e0;
+  h1 {
+    color: #fff;
+  }
 }
 
 .container-fluid {
-  max-width: 512px;
+  max-width: 640px;
 }

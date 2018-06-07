@@ -1,28 +1,27 @@
-import fetch from 'isomorphic-fetch';
+export const SEARCH_START = 'SEARCH_START';
+export const SEARCH_COMPLETE = 'SEARCH_COMPLETE';
 
 // In Redux action creators simply return an action.
 // http://redux.js.org/docs/basics/Actions.html
-export const START_SEARCH = 'START_SEARCH';
-export const SEARCH_FAILURE = 'SEARCH_FAILURE';
-export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
+export const searchStart = makeActionCreator(SEARCH_START, 'keyword');
+export const searchComplete = makeActionCreator(SEARCH_COMPLETE, 'error', 'result');
 
-export const startSearch = makeActionCreator(START_SEARCH, 'keyword');
-export const searchFailure = makeActionCreator(SEARCH_FAILURE, 'error');
-export const searchSuccess = makeActionCreator(SEARCH_SUCCESS, 'result');
+// Thunk middleware knows how to handle functions.
+// It passes the dispatch method as an argument to the function,
+// thus making it able to dispatch actions itself.
+export const sendSearchRequest = (keyword) => {
+  let action = async (dispatch) => {
+    dispatch(searchStart(keyword));
 
-// Meet our first thunk action creator!
-const sendSearchRequest = (keyword) => {
-  // Thunk middleware knows how to handle functions.
-  // It passes the dispatch method as an argument to the function,
-  // thus making it able to dispatch actions itself.
-  let action = (dispatch) => {
-    dispatch(startSearch(keyword));
+    try {
+      let response = await fetch(`/search?q=${encodeURIComponent(keyword)}`);
+      let json = await response.json();
 
-    return fetch('/search?q=' + encodeURIComponent(keyword))
-      .then(response => response.json())
-      .then(json => dispatch(searchSuccess(json)))
-      .catch(error => dispatch(searchFailure(error)));
-  };
+      dispatch(searchComplete(null, json));
+    } catch (error) {
+      dispatch(searchComplete(error));
+    }
+  }
 
   return action;
 };
@@ -39,7 +38,3 @@ function makeActionCreator(type, ...propNames) {
     return action;
   };
 }
-
-export {
-  sendSearchRequest
-};

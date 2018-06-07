@@ -6,7 +6,7 @@ let keywordElement = null;
 
 const SearchForm = ({ startSearch }) => {
   return (
-    <form className="col-xs-12 form-inline search-form" onSubmit={event => {
+    <form className="col-12 form-inline search-form" onSubmit={event => {
       event.preventDefault();
       startSearch(keywordElement.value);
     }}>

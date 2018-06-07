@@ -7,8 +7,8 @@ import './scss/twitter-app.scss';
 const TwitterApp = () => (
   <div>
     <header className="row">
-      <h1 className="col-xs-12">twitter-client-redux</h1>
-      <p className="col-xs-12">You can search Twitter using the search box below</p>
+      <h1 className="col-12">twitter-client-redux</h1>
+      <p className="col-12">You can search Twitter using the search box below</p>
     </header>
     <div className="row">
       <SearchFormContainer />
