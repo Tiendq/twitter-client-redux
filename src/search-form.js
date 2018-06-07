@@ -12,7 +12,7 @@ const SearchForm = ({ startSearch }) => {
     }}>
       <div className="form-group">
         <input type="text" ref={input => keywordElement = input} className="form-control" maxLength="500" placeholder="Search for a topic, full name, or @username" />
-        <button type="submit" className="btn btn-primary">Search</button>
+        <button type="submit" className="btn btn-success">Search</button>
       </div>
     </form>
   );

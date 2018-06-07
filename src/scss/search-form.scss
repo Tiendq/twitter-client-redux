@@ -7,11 +7,12 @@
 }
 
 .form-inline .form-group {
-  display: block;
+  width: 100%;
+  justify-content: center;
 
   input {
-    width: 77%;
-    margin-right: 3%;
+    width: 70%;
+    margin-right: 1rem;
   }
 
   button {
