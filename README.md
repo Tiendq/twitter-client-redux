@@ -6,6 +6,13 @@ A [Redux async action](http://redux.js.org/docs/advanced/AsyncActions.html) exam
 
 ![Demo](./demo.png)
 
+## Features
+
+- Redux async action
+- Twitter REST APIs
+- ~~CSS module~~
+- ~~Redux-router~~
+
 ## How to Start
 
 `yarn install`
@@ -23,6 +30,6 @@ In order to run this application locally you need to [create a Twitter applicati
 - [Introduction to Redux](http://devguides.io/redux/)
 - [Redux Official Documentation](https://redux.js.org/)
 
-[Tien Do](tiendq@gmail.com)
+&copy;2018 [Tien Do](https://github.com/tiendq)
 
-MIT.
+MIT License.
