@@ -1,7 +1,31 @@
 let path = require('path');
 let webpack = require('webpack');
+let MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+let miniCssExtractPlugin = new MiniCssExtractPlugin({
+  filename: 'main.css'
+});
+
+let scssLoaders = [{
+    loader: 'css-loader',
+    options: {
+      modules: true,
+      camelCase: true,
+      minimize: 'production' === process.env.NODE_ENV,
+      importLoaders: 1,
+      localIdentName: '[local]-[hash:base64:5]'
+    }
+  },
+  'sass-loader'
+];
+
+let plugins = [
+  new webpack.NamedModulesPlugin(),
+  new webpack.HotModuleReplacementPlugin()
+];
 
 module.exports = {
+  mode: process.env.NODE_ENV,
   module: {
     rules: [{
       enforce: 'pre',
@@ -14,18 +38,7 @@ module.exports = {
       exclude: /node_modules/
     }, {
       test: /\.scss$/,
-      use: [
-        'style-loader', {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            camelCase: true,
-            importLoaders: 1,
-            localIdentName: '[local]-[hash:base64:5]'
-          }
-        },
-        'sass-loader'
-      ],
+      use: 'production' === process.env.NODE_ENV ? [MiniCssExtractPlugin.loader, ...scssLoaders] : ['style-loader', ...scssLoaders],
       exclude: /node_modules/
     }]
   },
@@ -39,9 +52,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist'
   },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins: 'production' === process.env.NODE_ENV ? [...plugins, miniCssExtractPlugin] : plugins,
   devtool: 'source-map'
 }

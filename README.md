@@ -10,8 +10,7 @@ A [Redux async action](http://redux.js.org/docs/advanced/AsyncActions.html) exam
 
 - Redux async action
 - Twitter REST APIs
-- ~~CSS module~~
-- ~~Redux-router~~
+- CSS modules
 
 ## How to Start
 
