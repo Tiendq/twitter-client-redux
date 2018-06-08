@@ -1,12 +1,6 @@
 .search-result-item {
   position: relative;
 
-  .profile-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
   .item-content {
     margin-left: 55px;
 
@@ -18,4 +12,12 @@
       font-size: 0.85rem;
     }
   }
+}
+
+.profile-image {
+  composes: rounded from global;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }

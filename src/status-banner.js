@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './scss/status-banner.scss';
+import styles from './status-banner.scss';
 
 const StatusBannerInner = ({ status, text }) => {
   if ('' === text)
     return null;
 
-  let className = 'status-banner alert alert-' + status;
-  return <p className={className}>{text}</p>;
+  let className = `${styles.statusBanner} alert alert-${status}`;
+
+  return (
+    <div className="col-12">
+      <p className={className}>{text}</p>
+    </div>
+  );
 };
 
 StatusBannerInner.propTypes = {

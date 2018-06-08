@@ -16,5 +16,6 @@ header {
 }
 
 .container-fluid {
+  composes: container-fluid from global;
   max-width: 640px;
 }

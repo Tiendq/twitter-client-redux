@@ -1,4 +1,6 @@
 .search-form {
+  composes: form-inline from global;
+
   padding-top: 15px;
   padding-bottom: 15px;
   border: 1px solid #e1e8ed;
@@ -6,7 +8,9 @@
   background-color: #e8f4fb;
 }
 
-.form-inline .form-group {
+.form-group {
+  composes: form-group from global;
+
   width: 100%;
   justify-content: center;
 

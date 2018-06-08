@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SearchResultItem from './search-result-item';
-import './scss/search-result.scss';
+import styles from './search-result.scss';
 
 const SearchResult = ({ keyword, tweets }) => {
   if ('' === keyword)
@@ -10,8 +10,8 @@ const SearchResult = ({ keyword, tweets }) => {
   let summary = `Found ${tweets.length} tweets for "${keyword}"`;
 
   return (
-    <div className="search-result">
-      <p className="search-summary">{summary}</p>
+    <div className="col-12">
+      <p className={styles.searchSummary}>{summary}</p>
       {tweets.length > 0 && renderTweetList(tweets)}
     </div>
   );

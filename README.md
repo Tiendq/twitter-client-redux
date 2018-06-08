@@ -29,6 +29,7 @@ In order to run this application locally you need to [create a Twitter applicati
 
 - [Introduction to Redux](http://devguides.io/redux/)
 - [Redux Official Documentation](https://redux.js.org/)
+- [CSS Modules with React: The Complete Guide](https://blog.yipl.com.np/css-modules-with-react-the-complete-guide-a98737f79c7c)
 
 &copy;2018 [Tien Do](https://github.com/tiendq)
 
