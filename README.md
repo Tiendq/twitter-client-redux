@@ -11,6 +11,8 @@ A [Redux async action](http://redux.js.org/docs/advanced/AsyncActions.html) exam
 - Redux async action
 - Twitter REST APIs
 - CSS modules
+- Test with Jest
+- ~~Server side rendering~~
 
 ## How to Start
 
@@ -19,6 +21,8 @@ A [Redux async action](http://redux.js.org/docs/advanced/AsyncActions.html) exam
 `yarn test`
 
 `yarn start` to start an Express server at `http://localhost:8080` with [HMR](https://webpack.js.org/concepts/hot-module-replacement/) ([nodemon](https://github.com/remy/nodemon) is utilized for its live loading feature).
+
+`yarn build` to build code for production mode e.g. use CSS file instead of inline style.
 
 ## Configuration
 
