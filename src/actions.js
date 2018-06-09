@@ -7,7 +7,7 @@ export const searchStart = makeActionCreator(SEARCH_START, 'keyword');
 export const searchComplete = makeActionCreator(SEARCH_COMPLETE, 'error', 'result');
 
 // Thunk middleware knows how to handle functions.
-// It passes the dispatch method as an argument to the function,
+// The inner function receives the store methods dispatch and getState as parameters.
 // thus making it able to dispatch actions itself.
 export const sendSearchRequest = (keyword) => {
   let action = async (dispatch) => {
