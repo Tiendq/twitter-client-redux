@@ -1,4 +1,11 @@
 {
+  "env": {
+    "production": {
+      "ignore": [
+        "*.test.js"
+      ]
+    }
+  },
   "presets": [
     ["env", {
       "targets": {
@@ -9,8 +16,5 @@
   ],
   "plugins": [
     "transform-object-rest-spread"
-  ],
-  "ignore": [
-    "*.test.js"
   ]
 }
