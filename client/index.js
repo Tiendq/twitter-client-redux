@@ -5,8 +5,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import * as reducers from './src/reducers';
-import TwitterApp from './src/twitter-app';
+import * as reducers from './reducers';
+import TwitterApp from './components/twitter-app';
 
 // Configure redux-devtools: https://github.com/zalmoxisus/redux-devtools-extension
 let store = createStore(combineReducers(reducers), composeWithDevTools(applyMiddleware(thunk, logger)));

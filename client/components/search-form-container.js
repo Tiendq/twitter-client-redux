@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { sendSearchRequest } from './actions';
+import { sendSearchRequest } from '../actions';
 import SearchForm from './search-form';
 
 const mapDispatchToProps = (dispatch) => ({

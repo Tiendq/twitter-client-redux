@@ -3,9 +3,9 @@ let express = require('express');
 let webpack = require('webpack');
 let webpackDevMiddleware = require('webpack-dev-middleware');
 let webpackHotMiddleware = require('webpack-hot-middleware');
-let webpackConfig = require('./webpack.config');
+let webpackConfig = require('../webpack.config');
 let config = require('dotenv').config(); // eslint-disable-line
-let searchTwitter = require('./src/search-twitter');
+let searchTwitter = require('./search-twitter');
 
 let compiler = webpack(webpackConfig);
 let app = express();
@@ -31,7 +31,7 @@ app.get('/search', (request, response) => {
 });
 
 app.get('*', (request, response) => {
-  response.sendFile(path.join(__dirname, 'index.html'));
+  response.sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.listen(8080, 'localhost', error => {

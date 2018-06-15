@@ -3,7 +3,7 @@
     "DEBUG": "express*"
   },
   "ignore": [
-    "index.js",
+    ".eslintrc.js",
     "webpack.config.js"
   ]
 }
