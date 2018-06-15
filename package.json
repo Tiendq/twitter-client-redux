@@ -11,9 +11,9 @@
     "twitter"
   ],
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=development nodemon server/index.js",
-    "start:production": "NODE_ENV=production nodemon server/index.js",
+    "build": "NODE_ENV=production webpack; babel server -d dist",
+    "start": "nodemon server/index.js",
+    "start:production": "NODE_ENV=production node dist/index.js",
     "test": "jest --config=jest.json --coverage",
     "test:watch": "jest --config=jest.json --watch",
     "watch": "webpack --mode=development --progress --colors --watch"

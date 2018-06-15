@@ -48,9 +48,9 @@ module.exports = {
     './client/index.js'
   ],
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist'
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist/client'),
+    publicPath: '/dist/client'
   },
   plugins: 'production' === process.env.NODE_ENV ? [...plugins, miniCssExtractPlugin] : plugins,
   devtool: 'source-map'
