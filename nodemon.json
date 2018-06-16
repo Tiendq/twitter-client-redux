@@ -1,5 +1,6 @@
 {
   "env": {
+    "BABEL_ENV": "server",
     "DEBUG": "express*",
     "NODE_ENV": "development"
   },

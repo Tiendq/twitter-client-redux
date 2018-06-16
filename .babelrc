@@ -1,6 +1,14 @@
 {
   "env": {
-    "production": {
+    "server": {
+      "plugins": [
+        ["css-modules-transform", {
+          "camelCase": true,
+          "extensions": [".scss"],
+          "generateScopedName": "[local]-[hash:base64:5]",
+          "preprocessCss": "./loaders/sass-loader.js"
+        }]
+      ],
       "ignore": [
         "*.test.js"
       ]

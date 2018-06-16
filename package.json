@@ -1,6 +1,6 @@
 {
   "name": "twitter-client-redux",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A Redux async action example with Twitter",
   "main": "index.js",
   "keywords": [
@@ -11,8 +11,10 @@
     "twitter"
   ],
   "scripts": {
-    "build": "NODE_ENV=production webpack; NODE_ENV=production babel server -d dist",
-    "start": "nodemon server/index.js",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "NODE_ENV=production webpack",
+    "build:server": "BABEL_ENV=server babel src -d dist",
+    "start": "nodemon src/index.js",
     "start:production": "NODE_ENV=production node dist/index.js",
     "test": "jest --config=jest.json --coverage",
     "test:watch": "jest --config=jest.json --watch",
@@ -61,6 +63,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-css-modules-transform": "^1.6.1",
     "babel-preset-env": "^1.7.0",
     "classnames": "^2.2.6",
     "fetch-mock": "^6.4.3",

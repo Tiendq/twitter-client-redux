@@ -12,7 +12,9 @@ A [Redux async action](http://redux.js.org/docs/advanced/AsyncActions.html) exam
 - Twitter REST APIs
 - CSS modules
 - Test with Jest
-- ~~Server side rendering~~
+- Server side rendering (SSR)
+
+Notes: We use `babel-node` for development (and build by `babel` for production). `babel` use `babel-plugin-css-modules-transform` to handle `scss` files then it ignores `style-loader` which loaded by `webpack-dev-middleware`. To support SSR we need to only use `webpack` for client side code.
 
 ## How to Start
 

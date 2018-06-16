@@ -43,9 +43,8 @@ module.exports = {
     }]
   },
   entry: [
-    'webpack-hot-middleware/client',
     'babel-polyfill',
-    './client/index.js'
+    './src/client/index.js'
   ],
   output: {
     filename: 'main.js',
