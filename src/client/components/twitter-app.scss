@@ -19,3 +19,19 @@ header {
   composes: container-fluid from global;
   max-width: 640px;
 }
+
+/*
+%test-base {
+  font-size: 2rem;
+}
+
+.test-blue {
+  @extend %test-base;
+  color: blue;
+}
+
+.test-red {
+  @extend %test-base;
+  color: red;
+}
+*/
