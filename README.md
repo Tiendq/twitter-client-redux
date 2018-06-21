@@ -13,6 +13,7 @@ A [Redux async action](http://redux.js.org/docs/advanced/AsyncActions.html) exam
 - CSS modules
 - Test with Jest
 - Server side rendering (SSR)
+- Pass `ref` to HOC/Redux's connected components with `React.forwardRef`
 
 Notes: We use `babel-node` for development (and build by `babel` for production). `babel` use `babel-plugin-css-modules-transform` to handle `scss` files then it ignores `style-loader` which loaded by `webpack-dev-middleware`. To support SSR we need to only use `webpack` for client side code.
 

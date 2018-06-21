@@ -1,16 +1,22 @@
-import { connect } from 'react-redux';
+import React from 'react';
+import { connectAdvanced } from 'react-redux';
 import { sendSearchRequest } from '../actions';
 import SearchForm from './search-form';
 
-const mapDispatchToProps = (dispatch) => ({
-  startSearch(keyword) {
-    let w = keyword.trim();
+const SearchFormContainer = connectAdvanced(selectorFactory)(SearchForm);
 
-    if (w.length > 0)
-      dispatch(sendSearchRequest(w));
-  }
-});
+function selectorFactory(dispatch) {
+  return (nextState, nextOwnProps) => ({
+    forwardedRef: nextOwnProps.forwardedRef,
+    startSearch(keyword) {
+      let w = keyword.trim();
 
-const SearchFormContainer = connect(null, mapDispatchToProps)(SearchForm);
+      if (w.length > 0)
+        dispatch(sendSearchRequest(w));
+    }
+  });
+}
 
-export default SearchFormContainer;
+// connect doesn't accept React.forwardRef return.
+// More detail: https://github.com/reduxjs/react-redux/issues/914#issuecomment-377421145
+export default React.forwardRef((props, ref) => <SearchFormContainer {...props} forwardedRef={ref} />);

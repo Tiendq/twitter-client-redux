@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import SearchResultItem from './search-result-item';
 import styles from './search-result.scss';
 
-const SearchResult = ({ keyword, tweets }) => {
+const SearchResult = ({ keyword, tweets, keywordInput }) => {
   if ('' === keyword)
     return null;
 
   let summary = `Found ${tweets.length} tweets for "${keyword}"`;
-
+console.log(keywordInput);
   return (
-    <div className="col-12">
-      <p className={styles.searchSummary}>{summary}</p>
-      {tweets.length > 0 && renderTweetList(tweets)}
-    </div>
+    <Fragment>
+      <div className="col-12">
+        <p className={styles.searchSummary}>{summary}</p>
+        {tweets.length > 0 && renderTweetList(tweets)}
+      </div>
+      <div>{keywordInput && keywordInput.value}</div>
+    </Fragment>
   );
 };
 
@@ -36,7 +39,8 @@ SearchResult.propTypes = {
     createdDate: PropTypes.string.isRequired,
     userName: PropTypes.string.isRequired,
     userImageUrl: PropTypes.string.isRequired
-  }).isRequired).isRequired
-};
+  }).isRequired).isRequired,
+  keywordInput: PropTypes.object
+}
 
 export default SearchResult;
