@@ -1,32 +1,28 @@
 import React from 'react';
-import { cleanup, fireEvent, render, renderIntoDocument, Simulate } from 'react-testing-library';
+import { cleanup, fireEvent, render, renderIntoDocument } from 'react-testing-library';
 import SearchForm from './search-form';
 
 afterEach(() => cleanup());
 
-test('SearchForm should renders correctly', () => {
-  let { container } = render(<SearchForm startSearch={jest.fn()} />);
+test('should render correctly', () => {
+  let ref = React.createRef();
+  let { container } = render(<SearchForm startSearch={jest.fn()} forwardedRef={ref} />);
   expect(container.firstChild).toMatchSnapshot();
 });
 
 test('search should start with "test"', () => {
+  let ref = React.createRef();
   let startSearch = jest.fn();
-  let { container } = renderIntoDocument(<SearchForm startSearch={startSearch} />);
+  let { container } = renderIntoDocument(<SearchForm startSearch={startSearch} forwardedRef={ref} />);
 
   let keyword = 'test';
 
   let search = container.querySelector('input[type=text]');
   search.value = keyword;
+  fireEvent.change(search);
 
-  Simulate.change(search);
-
-  fireEvent(
-    container.querySelector('button[type=submit]'),
-    new MouseEvent('click', {
-      bubbles: true,
-      cancelable: true
-    })
-  );
+  let submit = container.querySelector('button[type=submit]');
+  fireEvent.click(submit);
 
   expect(startSearch).toBeCalledWith(keyword);
 });

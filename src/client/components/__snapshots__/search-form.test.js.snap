@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchForm should renders correctly 1`] = `
+exports[`should render correctly 1`] = `
 <form
   class="col-12 searchForm"
 >
@@ -9,9 +9,10 @@ exports[`SearchForm should renders correctly 1`] = `
   >
     <input
       class="form-control"
-      maxlength="500"
+      maxlength="50"
       placeholder="Search for a topic, full name, or @username"
       type="text"
+      value=""
     />
     <button
       class="btn btn-success"
