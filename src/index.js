@@ -1,6 +1,6 @@
 let path = require('path');
 let express = require('express');
-let config = require('dotenv').config(); // eslint-disable-line
+let config = require('dotenv-safe').config(); // eslint-disable-line
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
