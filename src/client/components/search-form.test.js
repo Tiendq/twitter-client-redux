@@ -26,3 +26,11 @@ test('search should start with "test"', () => {
 
   expect(startSearch).toBeCalledWith(keyword);
 });
+
+test('submit button should have correct classes', () => {
+  let ref = React.createRef();
+  let { container } = render(<SearchForm startSearch={jest.fn()} forwardedRef={ref} />);
+
+  let submit = container.querySelector('button[type=submit]');
+  expect(submit).toHaveClass('btn-success');
+});

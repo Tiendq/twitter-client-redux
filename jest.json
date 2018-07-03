@@ -10,5 +10,6 @@
   "moduleNameMapper": {
     "^.+\\.scss$": "identity-obj-proxy"
   },
+  "setupTestFrameworkScriptFile": "<rootDir>/src/tests/setup.js",
   "verbose": true
 }
