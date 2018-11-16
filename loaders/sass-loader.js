@@ -7,4 +7,4 @@ module.exports = function processSass(data, fileName) {
   }).css;
 
   return result.toString('utf8');
-};
+}

@@ -7,17 +7,15 @@ let miniCssExtractPlugin = new MiniCssExtractPlugin({
 });
 
 let scssLoaders = [{
-    loader: 'css-loader',
-    options: {
-      modules: true,
-      camelCase: true,
-      minimize: 'production' === process.env.NODE_ENV,
-      importLoaders: 1,
-      localIdentName: '[local]-[hash:base64:5]'
-    }
-  },
-  'sass-loader'
-];
+  loader: 'css-loader',
+  options: {
+    modules: true,
+    camelCase: true,
+    minimize: 'production' === process.env.NODE_ENV,
+    importLoaders: 1,
+    localIdentName: '[local]-[hash:base64:5]'
+  }
+}, 'sass-loader'];
 
 let plugins = [
   new webpack.NamedModulesPlugin(),

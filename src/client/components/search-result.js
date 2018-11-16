@@ -8,17 +8,16 @@ const SearchResult = ({ keyword, tweets, keywordInput }) => {
     return null;
 
   let summary = `Found ${tweets.length} tweets for "${keyword}"`;
-console.log(keywordInput);
+
   return (
     <Fragment>
       <div className="col-12">
         <p className={styles.searchSummary}>{summary}</p>
         {tweets.length > 0 && renderTweetList(tweets)}
       </div>
-      <div>{keywordInput && keywordInput.value}</div>
     </Fragment>
   );
-};
+}
 
 const renderTweetList = tweets => {
   return (
@@ -29,7 +28,7 @@ const renderTweetList = tweets => {
       })}
     </ul>
   );
-};
+}
 
 SearchResult.propTypes = {
   keyword: PropTypes.string.isRequired,

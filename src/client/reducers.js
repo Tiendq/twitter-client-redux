@@ -25,7 +25,10 @@ export const tweets = (state = initialState.tweets, action) => {
 export const lastStatus = (state = initialState.lastStatus, action) => {
   switch (action.type) {
     case SEARCH_START:
-      return { status: 'info', text: `Searching for "${action.keyword}"...` };
+      return {
+        status: 'info',
+        text: `Searching for "${action.keyword}"...`
+      }
 
     case SEARCH_COMPLETE:
       return {
